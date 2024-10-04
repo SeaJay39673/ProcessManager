@@ -1,0 +1,119 @@
+NOTE:  Time: 11 is printed 4 times and each "time",
+there will be something different about them.  
+
+*****************************************************
+The current system state is as follows:
+*****************************************************
+
+CURRENT TIME: 11
+
+RUNNING PROCESS: 
+PID  Priority Value  Start Time  Total CPU time
+ 3    1           7        6             1
+
+BLOCKED PROCESS: 
+Queue of processes Blocked for resource 0 is empty
+Queue of processes Blocked for resource 1 is empty
+Queue of processes Blocked for resource 2 is empty
+
+PROCESSES READY TO EXECUTE: 
+Queue of processes with priority 0 is empty
+Queue of processes with priority 1 :
+PID  Priority Value  Start Time  Total CPU time
+ 4    1           1        6             1
+Queue of processes with priority 2 :
+PID  Priority Value  Start Time  Total CPU time
+ 2    2          42        5             3
+Queue of processes with priority 3 is empty
+*****************************************************
+
+*****************************************************
+The current system state is as follows:
+*****************************************************
+
+CURRENT TIME: 11
+
+RUNNING PROCESS: 
+PID  Priority Value  Start Time  Total CPU time
+ 3    1           7        6             1
+
+BLOCKED PROCESS: 
+Queue of processes Blocked for resource 0 is empty
+Queue of processes Blocked for resource 1 is empty
+Queue of processes Blocked for resource 2 is empty
+
+PROCESSES READY TO EXECUTE: 
+Queue of processes with priority 0 :
+PID  Priority Value  Start Time  Total CPU time
+ 5    0           6       11             0
+ 6    0           6       11             0
+Queue of processes with priority 1 :
+PID  Priority Value  Start Time  Total CPU time
+ 4    1           1        6             1
+Queue of processes with priority 2 :
+PID  Priority Value  Start Time  Total CPU time
+ 2    2          42        5             3
+Queue of processes with priority 3 is empty
+*****************************************************
+
+
+*****************************************************
+The current system state is as follows:
+*****************************************************
+
+CURRENT TIME: 11
+
+RUNNING PROCESS: 
+PID  Priority Value  Start Time  Total CPU time
+ 5    0           6       11             0
+
+BLOCKED PROCESS: 
+Queue of processes Blocked for resource 0 is empty
+Queue of processes Blocked for resource 1 is empty
+Queue of processes Blocked for resource 2:
+PID  Priority Value  Start Time  Total CPU time
+ 3    0           7        6             1
+
+PROCESSES READY TO EXECUTE: 
+Queue of processes with priority 0 :
+PID  Priority Value  Start Time  Total CPU time
+ 6    0           6       11             0
+Queue of processes with priority 1 :
+PID  Priority Value  Start Time  Total CPU time
+ 4    1           1        6             1
+Queue of processes with priority 2 :
+PID  Priority Value  Start Time  Total CPU time
+ 2    2          42        5             3
+Queue of processes with priority 3 is empty
+*****************************************************
+
+*****************************************************
+The current system state is as follows:
+*****************************************************
+
+CURRENT TIME: 11
+
+RUNNING PROCESS: 
+PID  Priority Value  Start Time  Total CPU time
+ 6    0           6       11             0
+
+BLOCKED PROCESS: 
+Queue of processes Blocked for resource 0 is empty
+Queue of processes Blocked for resource 1:
+PID  Priority Value  Start Time  Total CPU time
+ 5    0           6       11             0
+Queue of processes Blocked for resource 2:
+PID  Priority Value  Start Time  Total CPU time
+ 3    0           7        6             1
+
+PROCESSES READY TO EXECUTE: 
+Queue of processes with priority 0 is empty
+Queue of processes with priority 1 :
+PID  Priority Value  Start Time  Total CPU time
+ 4    1           1        6             1
+Queue of processes with priority 2 :
+PID  Priority Value  Start Time  Total CPU time
+ 2    2          42        5             3
+Queue of processes with priority 3 is empty
+*****************************************************
+

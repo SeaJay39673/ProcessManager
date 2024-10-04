@@ -1,0 +1,69 @@
+clarification and Q&A
+
+1. What is the PCB table and what should it have?
+  pid, priority, value, start_time, run_time, and cpu_time   at a minium
+      as a note, Some of these are used to calculate the turnaround time and are not printed by the reporter.
+  The PCB table will be vector of all the processes in the system, so it may be declared something like:  pcb pcb_table[100];
+
+2. What do you mean by: implement the process manager as a set of major variables:
+  Time, PcbTable, ReadyState, BlockedState, and RunningState
+      Note, there will be THREE BlockedState variables.  One for each blocked: r0, r1, r2.
+
+  Time is the Time in the system.  ie int Time=0;  will work
+     A note: with the cstdio time is already declared as something else, so Time is what I used.
+
+  PcbTable would be an array of all the processes in the system.  You can set it a size of 100 (that won't be more then a 100 processes).
+    Do not implement this as a vector of vector of integers.  that's a terrible data structure.
+
+  Ready and BlockedState are using QueueArray (ie priority queues), they will likely be of type integer, since you will use the 
+  pid (array index of the pcb) to the process, instead of using a pcb.  
+
+  The runningState (or CPU) would POINT (i.e. store pid) to a single pcb in the vector/array and also must kept information about the quantum, etc.  
+  When a process leaves the processor, you will need to update the PCB with all the relevent information.
+
+3. Reporter.
+   You only need a fork() the scheduler and the the child (the reporter) would call a reporter method and then exit.  The parent process is the sheduler and would continue to the next command.   
+
+
+4. The T command and turnaround time.
+   The T is the last command issued.  The commander should send that command to the scheduler, which figures out the turnaround time, 
+   prints it and then exits the scheduler.  The commander will also exit at this point as well.  Don't forget the wait in the commander, 
+   for the scheduler to end.
+   You call, you can send the turn around info the commander to print.
+
+5. The Q and C command.  while it may seem simple, increment the time.  Don't forget the scheduler needs check the if the quantum has ended.
+
+
+6. Yes, I really mean you need to format your output to look like the "last state of the system" example.  columns, etc.  
+    Because it's easier to read and grade.
+   You may find this helpful:
+      cout << "PID  Priority Value  Start Time  Total CPU time" << endl;
+      cout << setw(2)  << pid << "  "
+           << setw(4)  << priority << "  "
+           << setw(7)  << value << "  "
+           << setw(11) << start_time << "  "
+           << setw(8)  << total_time << endl;
+
+7.  Does it read a file?  No, std in and out are all that is needed.  You can redirect input 
+  ./cmdr < hw2_input  
+ So you don't have to type the entire file.
+
+8. don't print out a screen capture.  how do I get the output?
+  you use file redirection.  using question 7,
+  ./cmdr < hw_input >ouput_file  
+
+  output_file has all the output.
+
+9. What are the quantums?
+priority 0 is q is 1
+priority 1 is q is 2
+priority 2 is q is 4
+priority 3 is q is 8
+
+10. "Resources are allocated to processes based on priorities."
+    Hint: Use a seperate QueueArray for each resource type.
+
+10. "The commander process issues one of the following commands to the process manager every two second:"
+    This means the commander should processes the input and only send VALID commands to the manager.
+
+11.  How many cpus are there?  1, only 1.

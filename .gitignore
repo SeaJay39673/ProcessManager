@@ -1,0 +1,5 @@
+commander
+processManager
+*.o
+*.json
+output.txt
